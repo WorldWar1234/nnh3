@@ -2,7 +2,7 @@ const DEFAULT_QUALITY = 40;
 
 function params(req, res, done) {
   let url = req.query.url;
-  if (!url) return res.send('bandwidth-hero-proxy');
+  if (!url) return res.end('bandwidth-hero-proxy');
 
   req.params.url = decodeURIComponent(url);
   req.params.webp = !req.query.jpeg;
