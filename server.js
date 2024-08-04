@@ -24,11 +24,11 @@ fastify.get('/', { preHandler: [authenticate, params] }, async (req, res) => {
         return;
     }
 
-    if (statusCode >= 300 && headers.location) {
+  /*  if (statusCode >= 300 && headers.location) {
         // Handle redirects
         req.params.url = headers.location;
         return redirect(req, res);
-    }
+    } */
 
     req.params.originType = headers['content-type'] || '';
     req.params.originSize = parseInt(headers['content-length'], 10);
