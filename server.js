@@ -8,7 +8,7 @@ const params = require('./src/params');
 const compress = require('./src/compress');
 const shouldCompress = require('./src/shouldCompress');
 const redirect = require('./src/redirect');
-const bypass = require('./src/bypass');
+//const bypass = require('./src/bypass'); removed 'cause of proxy like behaviour
 
 const fastify = Fastify();
 const PORT = process.env.PORT || 8080;
