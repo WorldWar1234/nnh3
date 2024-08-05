@@ -3,7 +3,7 @@
 
 const Fastify = require('fastify');
 const { request } = require('undici');
-const authenticate = require('./src/authenticate');
+//const authenticate = require('./src/authenticate');
 const params = require('./src/params');
 const compress = require('./src/compress');
 const shouldCompress = require('./src/shouldCompress');
@@ -13,7 +13,7 @@ const redirect = require('./src/redirect');
 const fastify = Fastify();
 const PORT = process.env.PORT || 8080;
 
-fastify.get('/', { preHandler: [authenticate, params] }, async (req, res) => {
+fastify.get('/', { preHandler: [params] }, async (req, res) => {
     const url = req.params.url;
 
     const { statusCode, headers, body } = await request(url, { method: 'GET' });
