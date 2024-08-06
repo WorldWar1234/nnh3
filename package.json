@@ -10,7 +10,6 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "basic-auth": "^2.0.1",
     "fastify": "^3.0.0",
     "undici": "^5.0.0",
     "sharp": "^0.28.2"
