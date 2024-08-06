@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 'use strict';
-
-const Fastify = require('fastify');
+const fastify = require('fastify')({
+  logger: true
+})
+//const Fastify = require('fastify');
 const { request } = require('undici');
 //const authenticate = require('./src/authenticate');
 const params = require('./src/params');
@@ -10,7 +12,8 @@ const shouldCompress = require('./src/shouldCompress');
 const redirect = require('./src/redirect');
 //const bypass = require('./src/bypass'); removed 'cause of proxy like behaviour
 
-const fastify = Fastify();
+//const fastify = Fastify();
+
 const PORT = process.env.PORT || 8080;
 
 fastify.get('/', { preHandler: [params] }, async (req, res) => {
