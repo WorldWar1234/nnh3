@@ -24,8 +24,7 @@ fastify.get('/', { preHandler: [params] }, async (req, res) => {
 
     if (statusCode >= 400) {
         // Send an error response if there is a bad status code
-        res.status(500).send('Error fetching the image.');
-        return;
+        return res.status(500).send('Error fetching the image.');
     }
 
   /*  if (statusCode >= 300 && headers.location) {
