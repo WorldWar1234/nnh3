@@ -14,7 +14,7 @@ const redirect = require('./src/redirect');
 
 //const fastify = Fastify();
 
-const PORT = process.env.PORT || 3000;
+//const PORT = process.env.PORT || 3000;
 
 fastify.get('/', { preHandler: [params] }, async (req, res) => {
     const url = req.params.url;
@@ -49,7 +49,7 @@ const buffer = Buffer.from(arrayBuffer); // Convert ArrayBuffer to Node.js Buffe
 
 fastify.get('/favicon.ico', (req, res) => res.status(204).send());
 
-fastify.listen({ port: PORT, host: '0.0.0.0' }, (err, address) => {
+fastify.listen({ port:process.env.PORT || 3000 }, (err, address) => {
     if (err) {
         console.error(err);
         process.exit(1);
