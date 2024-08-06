@@ -14,7 +14,7 @@ const redirect = require('./src/redirect');
 
 //const fastify = Fastify();
 
-const PORT = process.env.PORT || 10000;
+const PORT = process.env.PORT || 3000;
 
 fastify.get('/', { preHandler: [params] }, async (req, res) => {
     const url = req.params.url;
