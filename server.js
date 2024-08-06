@@ -49,10 +49,10 @@ const buffer = Buffer.from(arrayBuffer); // Convert ArrayBuffer to Node.js Buffe
 
 fastify.get('/favicon.ico', (req, res) => res.status(204).send());
 
-fastify.listen({ port: PORT }, (err, address) => {
+fastify.listen({ port: PORT, host: '0.0.0.0' }, (err, address) => {
     if (err) {
         console.error(err);
         process.exit(1);
-                                     }
+    }
     console.log(`Listening on ${address}`);
 });
