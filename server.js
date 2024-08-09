@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 const fastify = require('fastify')({
-  logger: true
+  logger: false
 })
 //const Fastify = require('fastify');
 const { request } = require('undici');
